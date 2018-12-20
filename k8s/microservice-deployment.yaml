@@ -1,0 +1,34 @@
+#ELK deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservice01-deployment
+  labels:
+    app: microservice01
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: microservice01
+  template:
+    metadata:
+      labels:
+        app: microservice01
+    spec:
+      containers:
+      - name: microservice01-service
+        image: alfredwhelan/microservice01:1.0
+        ports:
+        - containerPort: 8001
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: microservice01
+spec:
+  type: LoadBalancer
+  selector:
+    app: microservice01
+  ports:
+  - port: 80
+    targetPort: 8001
