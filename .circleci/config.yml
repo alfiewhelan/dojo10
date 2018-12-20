@@ -14,7 +14,7 @@ jobs:
           docker build -t alfredwhelan/microservice01:$TAG .
           docker login -u $DOCKER_USER -p $DOCKER_PASS
           docker push alfredwhelan/microservice01:$TAG
-          sed -i k8s/microservice-deployment.yaml 's/microservice01:.*/microservice01:$TAG/g'
+          sed -i "s/microservice01:.*/microservice01:$TAG/g" k8s/microservice-deployment.yaml
           az login --service-principal -u $SPU -p $SPP --tenant $SPT
           az aks get-credentials --resource-group acctestRG1 --name acctestaks1
           kubectl apply -f k8s/microservice-deployment.yaml
