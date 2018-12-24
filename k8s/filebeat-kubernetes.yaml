@@ -80,17 +80,17 @@ spec:
         ]
         env:
         - name: ELASTICSEARCH_HOST
-          value: "10.0.42.22"
+          value: "10.0.199.196"
         - name: ELASTICSEARCH_PORT
           value: "9200"
         - name: ELASTICSEARCH_USERNAME
           value: elastic
         - name: ELASTICSEARCH_PASSWORD
           value: changeme
-        - name: ELASTIC_CLOUD_ID
-          value:
-        - name: ELASTIC_CLOUD_AUTH
-          value:
+        #- name: ELASTIC_CLOUD_ID
+        #  value:
+        #- name: ELASTIC_CLOUD_AUTH
+        #  value:
         securityContext:
           runAsUser: 0
           # If using Red Hat OpenShift uncomment this:
@@ -168,4 +168,3 @@ metadata:
   namespace: kube-system
   labels:
     k8s-app: filebeat
----
