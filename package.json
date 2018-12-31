@@ -9,7 +9,9 @@
   "author": "alfie.whelan",
   "license": "ISC",
   "dependencies": {
+    "appmetrics-zipkin": "^1.1.1",
     "bunyan": "^1.8.12",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "request-promise-native": "^1.0.5"
   }
 }
