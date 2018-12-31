@@ -80,7 +80,7 @@ spec:
         ]
         env:
         - name: ELASTICSEARCH_HOST
-          value: "10.0.199.196"
+          value: "10.0.152.5"
         - name: ELASTICSEARCH_PORT
           value: "9200"
         - name: ELASTICSEARCH_USERNAME
