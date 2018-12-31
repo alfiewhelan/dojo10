@@ -1,6 +1,6 @@
 const pkg = require('./package.json')
 
-var appzip = require('appmetrics-zipkin')({
+var appzip = require('appmetrics-zipkin01')({
     host: '51.141.29.149',
     port: 9411,
     serviceName:pkg.name,
