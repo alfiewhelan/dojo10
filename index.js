@@ -1,8 +1,16 @@
-const server = require('./lib/server')
-const PORT = process.env.PORT || 8001
 const pkg = require('./package.json')
-const log = require('./lib/log')
 
-server.listen(PORT, () => {
-    log().info(`${pkg.name} is running on ${PORT}`)
-})
+var appzip = require('appmetrics-zipkin')({
+    host: '51.141.29.149',
+    port: 9411,
+    serviceName:pkg.name,
+    sampleRate: 1.0
+  });
+
+  const server = require('./lib/server')
+  const PORT = process.env.PORT || 8001
+  
+  const log = require('./lib/log')
+  server.listen(PORT, () => {
+      log().info(`${pkg.name} is running on ${PORT}`)
+  })
