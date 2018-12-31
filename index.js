@@ -1,9 +1,9 @@
 const pkg = require('./package.json')
 
-var appzip = require('appmetrics-zipkin01')({
+var appzip = require('appmetrics-zipkin')({
     host: '51.141.29.149',
     port: 9411,
-    serviceName:pkg.name,
+    serviceName:"microservice01",
     sampleRate: 1.0
   });
 
